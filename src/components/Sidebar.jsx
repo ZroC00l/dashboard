@@ -10,7 +10,14 @@ import { links } from "../data/dummy";
 
 const Sidebar = () => {
   //const activeMenu = true;
-  const { activeMenu } = useStateContext();
+  const { activeMenu, currentColor, screenSize, setActiveMenu } =
+    useStateContext();
+
+  const handleCloseSidebar = () => {
+    if (activeMenu !== undefined && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
@@ -24,7 +31,7 @@ const Sidebar = () => {
           <div className="flex justify-between items-center">
             <Link
               to="/"
-              onClick={() => {}}
+              onClick={handleCloseSidebar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold 
               tracking-tight dark:text-white text-slate-900"
             >
@@ -35,7 +42,8 @@ const Sidebar = () => {
               <button
                 type="button"
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
-                onClick={() => {}}
+                style={{ color: currentColor }}
+                onClick={() => setActiveMenu(!activeMenu)}
               >
                 <MdOutlineCancel />
               </button>
@@ -50,7 +58,10 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
-                    onClick={() => {}}
+                    onClick={handleCloseSidebar}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : "",
+                    })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }

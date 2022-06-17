@@ -541,7 +541,7 @@ export const links = [
     title: "Apps",
     links: [
       {
-        name: "calendar",
+        name: "calender",
         icon: <AiOutlineCalendar />,
       },
       {
