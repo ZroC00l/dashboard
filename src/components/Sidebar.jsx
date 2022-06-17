@@ -38,7 +38,7 @@ const Sidebar = () => {
               </button>
             </TooltipComponent>
           </div>
-          {/**  */}
+          {/** mapping sidebar Item headings and subitems */}
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
@@ -51,7 +51,10 @@ const Sidebar = () => {
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
-                  ></NavLink>
+                  >
+                    {link.icon}
+                    <span className="capitalize">{link.name}</span>
+                  </NavLink>
                 ))}
               </div>
             ))}
