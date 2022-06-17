@@ -27,7 +27,7 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem("themeColor", e.target.value);
   };
 
-  const handleClicked = (clicked) =>
+  const handleClick = (clicked) =>
     setIsClicked({ ...initialState, [clicked]: true });
 
   return (
@@ -47,7 +47,7 @@ export const ContextProvider = ({ children }) => {
         setActiveMenu,
         setMode,
         setColor,
-        handleClicked,
+        handleClick,
         initialState,
       }}
     >

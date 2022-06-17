@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import avatar from "../data/avatar.png";
-import { chat, cart, notification, userProfile } from ".";
+import { Chat, Cart, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const NavButton = ({ icon, color, dotColor, title, customFunc }) => (
@@ -27,8 +27,32 @@ const NavButton = ({ icon, color, dotColor, title, customFunc }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, currentColor, handleClick, setActiveMenu } =
-    useStateContext();
+  const {
+    activeMenu,
+    currentColor,
+    handleClick,
+    isClicked,
+    screenSize,
+    setActiveMenu,
+    setScreenSize,
+  } = useStateContext();
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
@@ -80,6 +104,11 @@ const Navbar = () => {
             </p>
           </div>
         </TooltipComponent>
+
+        {isClicked.cart && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   );
