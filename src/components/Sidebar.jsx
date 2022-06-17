@@ -4,10 +4,13 @@ import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
+import { useStateContext } from "../contexts/ContextProvider";
+
 import { links } from "../data/dummy";
 
 const Sidebar = () => {
-  const activeMenu = true;
+  //const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
@@ -42,7 +45,7 @@ const Sidebar = () => {
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
+                <p className="text-gray-400 m-3 mt-3 uppercase">{item.title}</p>
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
