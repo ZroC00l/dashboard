@@ -20,6 +20,33 @@ const Notification = () => {
             3 New
           </button>
         </div>
+        <Button
+          icon={<MdOutlineCancel />}
+          size="2xl"
+          bgHoverColor="light-gray"
+          color="rgb(153, 171, 180)"
+          borderRadius="50%"
+        />
+      </div>
+      <div className="mt-5">
+        {chatData.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center leading-8 gap-5 border-b-1 border-color p-3"
+          >
+            <img
+              src={item.image}
+              alt={item.message}
+              className="w-8 h-8 rounded-full"
+            />
+            <div>
+              <p className="font-semibold dark:text-gray-200">{item.message}</p>
+              <p className="text-gray-500 text-sm dark:text-gray-400">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -872,7 +872,7 @@ export const themeColors = [
 
 export const userProfileData = [
   {
-    icon: <BsCurrencyDollar />,
+    icon: "R",
     title: "My Profile",
     desc: "Account Settings",
     iconColor: "#03C9D7",
