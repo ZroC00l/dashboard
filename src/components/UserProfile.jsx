@@ -55,11 +55,11 @@ const UserProfile = () => {
         ))}
       </div>
       <Button
-        icon={<MdOutlineCancel />}
-        size="2xl"
-        bgHoverColor="light-gray"
-        color="rgb(153, 171, 180)"
-        borderRadius="50%"
+        width="full"
+        bgColor={currentColor}
+        color="white"
+        borderRadius="10px"
+        text="Logout"
       />
     </div>
   );
