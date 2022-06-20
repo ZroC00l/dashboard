@@ -917,7 +917,7 @@ export const ordersGrid = [
     field: "TotalAmount",
     headerText: "Total Amount",
     textAlign: "Center",
-    format: "R #",
+    format: "R #", //This sets the format of total amount on the orders grid table
     editType: "numericedit",
     width: "150",
   },
