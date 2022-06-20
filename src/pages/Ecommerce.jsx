@@ -364,6 +364,22 @@ const Ecommerce = () => {
           </div>
           <div className="mt-10">
             <img src={product9} alt="" className="md:w-96 h-50" />
+            <div className="mt-8">
+              <p className="font-semibold text-lg">React 18 coming soon!</p>
+              <p className="text-gray-400"> By Uncle-Groovey</p>
+              <p className="mt-8 text-sm text-gray-400">
+                This will be the small description for the news you have shown
+                here. There could be some great info.
+              </p>
+              <div className="mt-3">
+                <Button
+                  text="Read More"
+                  color="white"
+                  bgColor={currentColor}
+                  borderRadius="10px"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

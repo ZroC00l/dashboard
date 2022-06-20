@@ -19,7 +19,6 @@ import {
   BsKanban,
   BsBarChart,
   BsBoxSeam,
-  BsCurrencyDollar,
   BsShield,
   BsChatLeft,
 } from "react-icons/bs";
@@ -649,7 +648,7 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />,
-    amount: "39,354",
+    amount: "R 39,354",
     percentage: "-4%",
     title: "Customers",
     iconColor: "#03C9D7",
@@ -658,7 +657,7 @@ export const earningData = [
   },
   {
     icon: <BsBoxSeam />,
-    amount: "4,396",
+    amount: "R 4,396",
     percentage: "+23%",
     title: "Products",
     iconColor: "rgb(255, 244, 229)",
@@ -667,7 +666,7 @@ export const earningData = [
   },
   {
     icon: <FiBarChart />,
-    amount: "423,39",
+    amount: "R 423,39",
     percentage: "+38%",
     title: "Sales",
     iconColor: "rgb(228, 106, 118)",
@@ -677,7 +676,7 @@ export const earningData = [
   },
   {
     icon: <HiOutlineRefresh />,
-    amount: "39,354",
+    amount: "R 39,354",
     percentage: "-12%",
     title: "Refunds",
     iconColor: "rgb(0, 194, 146)",
@@ -688,7 +687,7 @@ export const earningData = [
 
 export const recentTransactions = [
   {
-    icon: <BsCurrencyDollar />,
+    //icon: <BsCurrencyDollar />,
     amount: "+R350",
     title: "Paypal Transfer",
     desc: "Money Added",
@@ -726,7 +725,7 @@ export const recentTransactions = [
     pcColor: "green-600",
   },
   {
-    icon: <BsCurrencyDollar />,
+    icon: "R",
     amount: "-R50",
     percentage: "+38%",
     title: "Refund",
@@ -917,8 +916,8 @@ export const ordersGrid = [
   {
     field: "TotalAmount",
     headerText: "Total Amount",
-    format: "C2",
     textAlign: "Center",
+    format: "R #",
     editType: "numericedit",
     width: "150",
   },
