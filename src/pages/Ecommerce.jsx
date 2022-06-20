@@ -15,7 +15,7 @@ import {
 } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
-import { product9 } from "../data/product9.jpg";
+import product9 from "../data/product9.jpg";
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -275,6 +275,95 @@ const Ecommerce = () => {
                 <p className={`text-${item.pcColor}`}>{item.amount}</p>
               </div>
             ))}
+            <div className="mt-4">
+              <SparkLine
+                currentColor={currentColor}
+                id="area-sparkLine"
+                height="160px"
+                type="Area"
+                data={SparklineAreaData}
+                width="320"
+                color="rgb(242, 252, 253)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+          <div className="flex justify-between">
+            <p className="text-xl font-semibold">MedicalPro Branding</p>
+            <button
+              type="button"
+              className="text-xl font-semibold text-gray-40"
+            >
+              <IoIosMore />
+            </button>
+          </div>
+          <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-10">
+            20 June 2022
+          </p>
+          <div className="flex gap-4 border-b-1 border-color mt-6">
+            {medicalproBranding.data.map((item) => (
+              <div
+                key={item.title}
+                className="border-r-1 border-color pr-4 pb-2"
+              >
+                <p className="text-xs text-gray-400">{item.title}</p>
+                <p className="text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="border-b-1 border-color pb-4 mt-2">
+            <p className="text-md font-semibold mb-2">Teams</p>
+            <div className="flex gap-4">
+              {medicalproBranding.teams.map((item) => (
+                <p
+                  key={item.name}
+                  className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs"
+                  style={{ background: item.color }}
+                >
+                  {item.name}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div className="mt-2">
+            <p className="text-md font-semibold mb-2">Leaders</p>
+            <div className="flex gap-4">
+              {medicalproBranding.leaders.map((item, index) => (
+                <img
+                  key={index}
+                  src={item.image}
+                  alt=""
+                  className="rounded-full w-8 h-8"
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-between items-center mt-5 border-t-1 border-color">
+            <div className="mt-3">
+              <Button
+                color="white"
+                bgColor={currentColor}
+                text="Add"
+                borderRadius="10px"
+              />
+            </div>
+            <p className="text-gray-400 text-sm">Recent Transactions</p>
+          </div>
+        </div>
+        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+          <div className="flex justify-between">
+            <p className="text-xl font-semibold">Daily Activities</p>
+            <button
+              type="button"
+              className="text-xl font-semibold text-gray-500"
+            >
+              <IoIosMore />
+            </button>
+          </div>
+          <div className="mt-10">
+            <img src={product9} alt="" className="md:w-96 h-50" />
           </div>
         </div>
       </div>
