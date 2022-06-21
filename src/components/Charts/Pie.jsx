@@ -11,15 +11,15 @@ import {
 } from "@syncfusion/ej2-react-charts";
 import { useStateContext } from "../../contexts/ContextProvider";
 
-const Doughnut = ({ id, data, legendVisiblity, height }) => {
+const Doughnut = ({ id, data, legendVisibility, height }) => {
   const { currentMode } = useStateContext();
 
   return (
     <AccumulationChartComponent
       id={id}
-      legendSettings={{ visible: legendVisiblity, color: "white" }}
+      legendSettings={{ visible: legendVisibility, background: "white" }}
       height={height}
-      background={currentMode === "dark" ? "#33373E" : "#fff"}
+      background={currentMode === "Dark" ? "#33373E" : "#fff"}
       tooltip={{ enable: true }}
     >
       <Inject
@@ -49,7 +49,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
             position: "Inside",
             font: {
               fontWeight: "600",
-              colot: "#fff",
+              color: "#fff",
             },
           }}
         />
