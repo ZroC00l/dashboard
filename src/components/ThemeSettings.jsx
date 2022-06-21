@@ -1,10 +1,11 @@
 import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck } from "react-icons/bs";
-import { useStateContext } from "../contexts/ContextProvider";
+
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { themeColors } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const ThemeSettings = () => {
   const { currentColor, currentMode, setColor, setMode, setThemeSettings } =
@@ -71,8 +72,8 @@ const ThemeSettings = () => {
                   <button
                     type="button"
                     className="h-10 w-10 rounded-full cursor-pointer"
-                    onClick={() => setColor(item.color)}
                     style={{ backgroundColor: item.color }}
+                    onClick={() => setColor(item.color)}
                   >
                     <BsCheck
                       className={`ml-2 text-2xl text-white ${
